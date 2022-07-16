@@ -8,7 +8,7 @@
 This  application can cloned directly or run the command
 
 ```sh
-$  npm i oneapp-node
+ $  npm i oneapp-node
 ```
 
 
@@ -17,6 +17,7 @@ When Cloning is done, use the
 
 ```sh
 $ npm install 
+```
 
 
 Import library
