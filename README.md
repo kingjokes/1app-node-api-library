@@ -22,13 +22,13 @@ $ npm install
 
 Import library
 
- ```sh
+ ```js
  $ const {OneApp} = require('oneapp-node')
  
  ```
  Instantiate the library and pass your secret key and public key
  
- ```sh
+ ```js
   $  const oneapp = new OneApp({secretKey:'secret key', publicKey:'public key'})
   ```
  ## List of available  API methods samples
