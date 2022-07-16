@@ -28,7 +28,7 @@ export  class OneApp {
   this.token=token
   this.publicToken = `Bearer ${this.token.publicKey}`
   this.secretToken = `Bearer ${this.token.secretKey}`
-  console.log(this.token)
+
  }
 
  public getTokens(){
