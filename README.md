@@ -5,11 +5,12 @@
  
 ## Install
 
-This is application can cloned directly or run the command
+This  application can cloned directly or run the command
 
 ```sh
-$ git clone https://github.com/obounce/1app-node-api-library.git
+$  npm i oneapp-node
 ```
+
 
 When Cloning is done, use the
 [`npm install` command](https://docs.npmjs.com/getting-started/installing-npm-packages-locally):
