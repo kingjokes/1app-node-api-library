@@ -17,9 +17,7 @@ When Cloning is done, use the
 
 ```sh
 $ npm install 
-```
-this is to install all dependencies.
-<br>
+
 
 Import library
 
