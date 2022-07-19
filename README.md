@@ -256,7 +256,187 @@ K;
 
     oneapp.BankList().then(response=>console.log(response)).catch(e=>console.log(e))
  ```
- 
+
+### ```Initialize Transaction```
+ ```js
+   const oneapp = new OneApp({secretKey:'secret_key', publicKey:'public_key'})
+
+    //Expected payload to initialize a transaction
+    oneapp.initiateTransaction({
+     amount: string | number,
+     fname: string,
+     lname: string,
+     customer_email: string,
+     phone: string,
+     reference: string,
+     currency: string,
+     redirecturl: string
+    }).then(response=>console.log(response))
+
+    //sample code
+    oneapp.initiateTransaction({
+     amount: '1000',
+     fname: 'John',
+     lname: 'Doe',
+     customer_email: 'johndoe@gmail.com',
+     phone: '0801234567789',
+     reference: 'OI8UYTEFYDTYTG7',
+     currency: 'NGN', //NGN or USD supported for now
+     redirecturl: 'https://mywebsite.com'
+    }).then(response=>console.log(response))
+ ```
+
+### ```Verify Transaction```
+ ```js
+   const oneapp = new OneApp({secretKey:'secret_key', publicKey:'public_key'})
+
+    //Expected payload to verify transaction
+    oneapp.verifyTransaction({
+     reference :string
+    }).then(response=>console.log(response))
+
+    //sample code
+    oneapp.verifyTransaction({
+     reference: 'OI8UYTEFYDTYTG7'
+    }).then(response=>console.log(response))
+ ```
+
+### ```Transaction List```
+ ```js
+   const oneapp = new OneApp({secretKey:'secret_key', publicKey:'public_key'})
+
+    oneapp.TransactionList().then(response=>console.log(response))
+ ```
+
+### ```Transaction Details```
+ ```js
+   const oneapp = new OneApp({secretKey:'secret_key', publicKey:'public_key'})
+
+    //Expected payload to fetch a transaction details
+    oneapp.TransactionDetail({
+     reference :string
+    }).then(response=>console.log(response))
+
+    //sample code
+    oneapp.TransactionDetail({
+     reference: 'OI8UYTEFYDTYTG7'
+    }).then(response=>console.log(response))
+ ```
+
+### ``` Customers```
+ ```js
+    //NB: Pass your live SECRETKEY to fetch customers
+   const oneapp = new OneApp({secretKey:'secret_key', publicKey:'public_key'})
+
+    oneapp.ListCustomers().then(response=>console.log(response))
+ ```
+
+### ```Payout / Settlements```
+ ```js
+    //NB: Pass your live SECRETKEY to fetch payouts or settlemnts
+   const oneapp = new OneApp({secretKey:'secret_key', publicKey:'public_key'})
+
+    oneapp.Payouts().then(response=>console.log(response))
+ ```
+
+### ```Settlement Transactions```
+ ```js
+  //NB: Pass your live SECRETKEY to fetch a settlement details
+   const oneapp = new OneApp({secretKey:'secret_key', publicKey:'public_key'})
+
+    //Expected payload to fetch a settlement details
+    oneapp.SettlementDetails({
+     reference :string
+    }).then(response=>console.log(response))
+
+    //sample code
+    oneapp.SettlementDetails({
+     reference: 'OI8UYTEFYDTYTG7'
+    }).then(response=>console.log(response))
+ ```
+### ```Fetch Disputes```
+ ```js
+    //NB: Pass your live SECRETKEY to fetch payouts or settlemnts
+   const oneapp = new OneApp({secretKey:'secret_key', publicKey:'public_key'})
+
+    oneapp.FetchDisputes().then(response=>console.log(response))
+ ```
+
+### ```Accept a Dispute```
+ ```js
+  //NB: Pass your live SECRETKEY to accept dispute
+   const oneapp = new OneApp({secretKey:'secret_key', publicKey:'public_key'})
+
+    //Expected payload to fetch a settlement details
+    oneapp.AcceptDispute({
+     sesscode: string | number,
+     userid: string | number,
+     businessid: string | number,
+     disputeid: number,
+     transref: string,
+     customername: string,
+     customeremail: string,
+     customerphone: string,
+     dclaim: string,
+     torefund: string,
+    }).then(response=>console.log(response))
+
+    //sample code
+    oneapp.SettlementDetails({
+     sesscode: '123456',
+     userid: 1,
+     businessid: 2,
+     disputeid: 1,
+     transref: 'OI8UYTEFYDTYTG7',
+     customername: 'John Doe',
+     customeremail: 'johndoe@gmail.com',
+     customerphone: '09034568931',
+     dclaim: 'shoe purchase', //service offered
+     torefund: 10000, //amount to refund
+    }).then(response=>console.log(response))
+ ```
+
+### ```Decline a Dispute```
+ ```js
+  //NB: Pass your live SECRETKEY to decline dispute
+   const oneapp = new OneApp({secretKey:'secret_key', publicKey:'public_key'})
+
+    //Expected payload to fetch a settlement details
+    oneapp.DeclineDispute({
+     sesscode:string | number,
+     userid:string | number,
+     businessid:string | number,
+     disputeid:string | number,
+     txref:string,
+     name:string,
+     email:string,
+     phone:string,
+     claim:string,
+     descres:string,
+     receipt:File,
+    }).then(response=>console.log(response))
+
+    //sample code
+    oneapp.SettlementDetails({
+     sesscode:'12345',
+     userid:'1234',
+     businessid:3,
+     disputeid:3,
+     txref:'OI8UYTEFYDTYTG7',
+     name:'John Doe',
+     email:'johndoe@gmail.come',
+     phone:'080XXXXXX98',
+     claim:'shoe purchase', //service offered
+     descres:'no error in transaction', //decline reason
+     receipt:'receipt.jpeg', //evidence of decline, File Upload
+    }).then(response=>console.log(response))
+ ```
+
+
+
+
+
+
 
 
 

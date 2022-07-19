@@ -9,5 +9,5 @@ export interface DeclinedisputePayload{
     phone:string,
     claim:string,
     descres:string,
-    receipt:string,
+    receipt:File,
 }
