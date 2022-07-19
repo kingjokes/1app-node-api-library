@@ -5,6 +5,7 @@ export interface SendmoneyPayload{
     bankname: string,
     reference: string,
     accountno: string | number,
+    acctname: string | number,
     narration: any,
     currency: string
 }

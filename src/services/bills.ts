@@ -7,12 +7,14 @@ import {AirtimepurchasePayload} from "../interfaces/airtimepurchase-payload";
 import {ElectricityPayload} from "../interfaces/electricity-payload";
 import {CabletvPayload} from "../interfaces/cabletv-payload";
 
+import {baseUrl} from "../interfaces/constants";
+
 
 export const processPayment = async (details:SendmoneyPayload,token:string):Promise<object | any> =>{
 
     try{
 
-        return await axios.post('https://api.1app.online/v1/sendmoney',
+        return await axios.post(`${baseUrl}sendmoney`,
             CreateFormData(details),
             {
             headers:{
@@ -31,7 +33,7 @@ export const processDataPurchase = async (details:DatapurchasePayload,token:stri
 
     try {
 
-        return await axios.post('https://api.1app.online/v1/databundle',
+        return await axios.post(`${baseUrl}databundle`,
             CreateFormData(details),
             {
                 headers: {
@@ -50,7 +52,7 @@ export const processAirtime = async (details:AirtimepurchasePayload, token:strin
 
     try {
 
-        return await axios.post('https://api.1app.online/v1/airtime',
+        return await axios.post(`${baseUrl}airtime`,
             CreateFormData(details),
             {
                 headers: {
@@ -69,7 +71,7 @@ export const processElectricity = async (details:ElectricityPayload, token:strin
 
     try {
 
-        return await axios.post('https://api.1app.online/v1/electricity',
+        return await axios.post(`${baseUrl}electricity`,
             CreateFormData(details),
             {
                 headers: {
@@ -88,7 +90,7 @@ export const processCable = async (details:CabletvPayload, token:string):Promise
 
     try {
 
-        return await axios.post('https://api.1app.online/v1/cabletv',
+        return await axios.post(`${baseUrl}cabletv`,
             CreateFormData(details),
             {
                 headers: {
@@ -105,7 +107,7 @@ export const processCable = async (details:CabletvPayload, token:string):Promise
 
 export const getDataPlans= async (provider:string ,token:string):Promise<object | any> =>{
     try{
-        return await axios.get(`https://api.1app.online/v1/getdataplans?provider=${provider}`,
+        return await axios.get(`${baseUrl}getdataplans?provider=${provider}`,
             {
                 headers:{
                     'Authorization':token
@@ -119,7 +121,7 @@ export const getDataPlans= async (provider:string ,token:string):Promise<object 
 
 export const getBankList= async (token:string):Promise<object | any> =>{
     try{
-        return await axios.get(`https://api.1app.online/v1/listbanks`,
+        return await axios.get(`${baseUrl}listbanks`,
             {
                 headers:{
                     'Authorization':token
@@ -133,7 +135,7 @@ export const getBankList= async (token:string):Promise<object | any> =>{
 
 export const getCable= async (provider:string ,token:string):Promise<object | any> =>{
     try{
-        return await axios.get(`https://api.1app.online/v1/listcabletv?tv=${provider}`,
+        return await axios.get(`${baseUrl}listcabletv?tv=${provider}`,
             {
                 headers:{
                     'Authorization':token
@@ -147,7 +149,7 @@ export const getCable= async (provider:string ,token:string):Promise<object | an
 
 export const findIUC= async (provider:string,iuc:string| number,token:string):Promise<object | any> =>{
     try{
-        return await axios.get(`https://api.1app.online/v1/verifycable?type=${provider}&iuc=${iuc}`,
+        return await axios.get(`${baseUrl}verifycable?type=${provider}&iuc=${iuc}`,
             {
                 headers:{
                     'Authorization':token
@@ -161,7 +163,7 @@ export const findIUC= async (provider:string,iuc:string| number,token:string):Pr
 
 export const verifyElectricity= async (meterno:string|number ,provider:string, token:string):Promise<object | any> =>{
     try{
-        return await axios.get(`https://api.1app.online/v1/verifyelect?meterno=${meterno}&provider=${provider}`,
+        return await axios.get(`${baseUrl}verifyelect?meterno=${meterno}&provider=${provider}`,
             {
                 headers:{
                     'Authorization':token

@@ -1,10 +1,12 @@
 {
   "name": "oneapp-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "1app API node library developed using typescript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["/dist"],
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon dist/index.js",
@@ -15,7 +17,14 @@
     "type": "git",
     "url": "git+https://github.com/obounce/1app-node-api-library.git"
   },
-  "keywords": [],
+  "keywords": [
+    "1app node",
+    "1app",
+    "oneapp-node",
+    "vtu payment integration",
+    "No 1, Nigeria payment solution"
+
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -25,7 +34,6 @@
   "dependencies": {
     "axios": "^0.27.2",
     "form-data": "^4.0.0"
-
   },
   "devDependencies": {
     "@tsconfig/recommended": "^1.0.1",

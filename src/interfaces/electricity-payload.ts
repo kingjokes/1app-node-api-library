@@ -1,7 +1,7 @@
 
 
 export interface ElectricityPayload{
-    meterno: string,
+    meterno: string | number,
     metername: string,
     provider: string,
     amount: string | number,
