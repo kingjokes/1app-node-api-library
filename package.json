@@ -18,14 +18,20 @@
     "url": "git+https://github.com/obounce/1app-node-api-library.git"
   },
   "keywords": [
-    "1app node",
-    "1app",
+    "1app nodeJS",
+    "1app NPM",
     "oneapp-node",
     "vtu payment integration",
-    "No 1, Nigeria payment solution"
+    "No 1, Nigeria payment solution",
+    "bills payments",
+    "money transfers",
+    "payment gateway",
+    "payment integration",
+    "oneapp"
+
 
   ],
-  "author": "",
+  "author": "1app Technologies",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/obounce/1app-node-api-library/issues"
