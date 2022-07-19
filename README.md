@@ -147,10 +147,10 @@ Toggle on <b>test mode</b> to get TEST API KEYS and Toggle on to <b>live mode</b
     //sample code
     // Network ID - MTN = 2,  GLO = 1, AIRTEL = 3, 9MOBILE = 4
     oneapp.purchaseAirtime({
-        'phoneno': '07012345678',
-        'network_id': '2',
-        'reference': 'O4I3U8SRNYOIYT',
-        'amount': '200'
+        phoneno: '07012345678',
+        network_id: '2',
+        reference: 'O4I3U8SRNYOIYT',
+        amount: '200'
     }).then(response=>console.log(response))
  ```
 
@@ -429,6 +429,34 @@ K;
      claim:'shoe purchase', //service offered
      descres:'no error in transaction', //decline reason
      receipt:'receipt.jpeg', //evidence of decline, File Upload
+    }).then(response=>console.log(response))
+ ```
+
+### ```Create a Wallet```
+ ```js
+  //NB: Pass your live SECRETKEY to create wallet
+   const oneapp = new OneApp({secretKey:'secret_key', publicKey:'public_key'})
+
+    //Expected payload to create a wallet
+    oneapp.CreateWallet({
+     appToken:string,
+     fname:string,
+     sname:string,
+     email: string,
+     phoneno: string,
+     auth: string,
+     referby: string | null
+    }).then(response=>console.log(response))
+
+    //sample code
+    oneapp.SettlementDetails({
+     appToken:'O4I3U8SRNYOIYT',
+     fname:'John',
+     sname:'Doe',
+     email: 'johndoe@gmail.com',
+     phoneno: '07036292257',
+     auth: 'Ilove1app@1', // password must be least 6 characters long (special character,  number, letter) to authenticate your account
+     referby: 'instagram' //who referred you
     }).then(response=>console.log(response))
  ```
 
