@@ -86,7 +86,7 @@ Toggle on <b>test mode</b> to get TEST API KEYS and Toggle on to <b>live mode</b
             bankname: 'GT BANK',
             reference: 'shudgyutg876542',
             accountno: '0245000000',
-            acctname: 'Olajide Olajide',
+            acctname: 'John Doe',
             narration: 'Transer to client',
             currency: 'NGN'
         })
@@ -124,6 +124,7 @@ Toggle on <b>test mode</b> to get TEST API KEYS and Toggle on to <b>live mode</b
         .catch(e=>console.log(response))
     
     //sample code
+// Network ID -  GLO = 1, MTN = 2,  AIRTEL = 3, 9MOBILE = 4
     oneapp.purchaseData({
         datacode: '1000',
         network_id: '2',
@@ -145,7 +146,7 @@ Toggle on <b>test mode</b> to get TEST API KEYS and Toggle on to <b>live mode</b
     }).then(response=>console.log(response))
 
     //sample code
-    // Network ID - MTN = 2,  GLO = 1, AIRTEL = 3, 9MOBILE = 4
+    // Network ID -  GLO = 1, MTN = 2,  AIRTEL = 3, 9MOBILE = 4
     oneapp.purchaseAirtime({
         phoneno: '07012345678',
         network_id: '2',
@@ -184,8 +185,8 @@ Toggle on <b>test mode</b> to get TEST API KEYS and Toggle on to <b>live mode</b
     
     //sample code
     oneapp.purchaseElectricity({
-        'meterno': '62320094725',
-        'metername': 'BRAHIM MARY OPE',
+        'meterno': '62320094735',
+        'metername': 'JOHN DOE',
         'provider': 'IBADAN',
         'amount': '1000',
         'vendtype': 'PREPAID'
